@@ -81,6 +81,7 @@ const pageList = [
         if (results.error) {
             ++errorCount;
         }
+        await page.waitFor(2000);
         console.log(`${pageData.name}: ${results.error ? `ERROR: ${results.error}` : 'SUCCESS'}`);
     }
     console.log(`${pageList.length} tests finished with ${errorCount} errors`);

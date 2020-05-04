@@ -4,10 +4,12 @@ const puppeteer = require("puppeteer");
 // Create an async closure, this way we can use await everywhere
 (async () => {
     // Create the browser instance. Pass an object to launch to configure the browser instance
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false
+    });
     // Create a new page, and navigate to the example site when it's ready
     const page = await browser.newPage();
-    await page.goto('https://example.com');
+    await page.goto('https://google.com');
     // Take a screenshot of the page and save it into the root folder (saves on creating folders)
     await page.screenshot({ path: 'outputs/example.png' });
     // Run code in the page context, here we return the viewing area and number of divs on the page

@@ -109,6 +109,8 @@ const pageList: PageOptions[] = [
       ++errorCount;
     }
 
+    await page.waitFor(2000);
+
     console.log(`${pageData.name}: ${results.error ? `ERROR: ${results.error}` : 'SUCCESS'}`);
   }
 
